@@ -3,9 +3,9 @@ import "./ProductsListing.css";
 
 const ProductsListing = () => {
   return (
-    <React.Fragment>
-      <h2>Products List:</h2>
-    </React.Fragment>
+    <div className="listing">
+      <h2 className="listing-h2">Products List:</h2>
+    </div>
   );
 };
 

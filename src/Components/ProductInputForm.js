@@ -3,9 +3,9 @@ import "./ProductInputForm.css";
 
 const ProductInputForm = () => {
   return (
-    <React.Fragment>
-      <h2>Add New Product:</h2>
-    </React.Fragment>
+    <div className="container">
+      <h2 className="container-h2">Add New Product:</h2>
+    </div>
   );
 };
 
