@@ -10,11 +10,12 @@ export const ProductProvider = ({ children }) => {
       ...prevProducts,
       { ...product, id: Date.now() },
     ]);
+    // console.log(products);
   };
-};
 
-return (
-  <ProductContext.Provider value={{ products, addProduct }}>
-    {children}
-  </ProductContext.Provider>
-);
+  return (
+    <ProductContext.Provider value={{ products, addProduct }}>
+      {children}
+    </ProductContext.Provider>
+  );
+};
