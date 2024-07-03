@@ -12,8 +12,8 @@ const ProductsListing = () => {
       )
       .map((product) => (
         <li key={product.id} title="product.description">
-          {product.product_name}: {product.price}INR{" "}
-          <button onClick={() => onRemove(product.id)}>Remove</button>
+          {product.product_name}: {product.price} INR {"   "}
+          <button onClick={() => onRemove(product.id)}>Remove</button>{" "}
           <button onClick={() => onEdit(product.id)}>Edit</button>
         </li>
       ));

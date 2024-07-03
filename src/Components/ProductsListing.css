@@ -5,6 +5,7 @@
   background-color: lightblue;
   color: darkblue;
   margin-top: 3%;
+  font-family: "Times New Roman", Times, serif;
 }
 
 .listing-h2 {
@@ -12,4 +13,26 @@
   border-radius: 10px;
   padding: 1.5%;
   background-color: aliceblue;
+  text-decoration: underline;
+}
+
+.listing li {
+  padding: 0.5%;
+  list-style: circle;
+}
+
+.listing button {
+  background-color: darkblue;
+  color: white;
+  font-family: "Times New Roman", Times, serif;
+  border: 1.5px steelblue solid;
+  padding: 1%;
+  padding-top: 0.5%;
+  padding-bottom: 0.5%;
+  margin: 0.1%;
+  border-radius: 7px;
+}
+
+.listing h3 {
+  text-decoration: underline;
 }
