@@ -3,30 +3,38 @@ import "./ProductInputForm.css";
 import { ProductContext } from "../Context/Productcontext";
 
 const ProductInputForm = () => {
-  const [price, setPrice] = useState("");
-  const [product_name, setProduct_name] = useState("");
-  const [category, setCategory] = useState("");
-  const [description, setDescription] = useState("");
+  const [product, setProduct] = useState({
+    price: "",
+    product_name: "",
+    category: "",
+    description: "",
+  });
 
   const { addProduct, currentProduct } = useContext(ProductContext);
 
   useEffect(() => {
     if (currentProduct) {
-      setPrice(currentProduct.price);
-      setProduct_name(currentProduct.product_name);
-      setCategory(currentProduct.category);
-      setDescription(currentProduct.description);
+      setProduct({
+        price: currentProduct.price,
+        product_name: currentProduct.product_name,
+        category: currentProduct.category,
+        description: currentProduct.description,
+      });
     }
   }, [currentProduct]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const new_product = { price, product_name, category, description };
-    addProduct(new_product);
-    setPrice("");
-    setProduct_name("");
-    setCategory("");
-    setDescription("");
+    addProduct(product);
+    setProduct({ price: "", product_name: "", category: "", description: "" });
+  };
+
+  const handleChange = (e) => {
+    const { id, value } = e.target;
+    setProduct((prevProduct) => ({
+      ...prevProduct,
+      [id]: value,
+    }));
   };
 
   return (
@@ -38,8 +46,8 @@ const ProductInputForm = () => {
           type="number"
           id="price"
           placeholder="Enter in INR"
-          value={price}
-          onChange={(e) => setPrice(e.target.value)}
+          value={product.price}
+          onChange={handleChange}
         ></input>
         <br />
         <br />
@@ -47,17 +55,13 @@ const ProductInputForm = () => {
         <input
           type="text"
           id="product_name"
-          value={product_name}
-          onChange={(e) => setProduct_name(e.target.value)}
+          value={product.product_name}
+          onChange={handleChange}
         ></input>
         <br />
         <br />
         <label htmlFor="category">Category:</label>{" "}
-        <select
-          id="category"
-          value={category}
-          onChange={(e) => setCategory(e.target.value)}
-        >
+        <select id="category" value={product.category} onChange={handleChange}>
           <option value=""></option>
           <option value="electronics">Electronics</option>
           <option value="health">Health</option>
@@ -69,8 +73,8 @@ const ProductInputForm = () => {
         <textarea
           id="product_description"
           placeholder="Optional"
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
+          value={product.description}
+          onChange={handleChange}
         ></textarea>
         <br />
         <button type="submit">Add Product</button>

@@ -35,7 +35,7 @@ export const ProductProvider = ({ children }) => {
         addProduct,
         onRemove,
         onEdit,
-        currentProduct,
+        currentProduct
       }}
     >
       {children}
