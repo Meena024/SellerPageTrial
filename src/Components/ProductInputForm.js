@@ -1,5 +1,4 @@
-import React, { useContext, useState } from "react";
-import "../Context/Productcontext";
+import React, { useContext, useState, useEffect } from "react";
 import "./ProductInputForm.css";
 import { ProductContext } from "../Context/Productcontext";
 
@@ -9,7 +8,16 @@ const ProductInputForm = () => {
   const [category, setCategory] = useState("");
   const [description, setDescription] = useState("");
 
-  const { addProduct } = useContext(ProductContext);
+  const { addProduct, currentProduct } = useContext(ProductContext);
+
+  useEffect(() => {
+    if (currentProduct) {
+      setPrice(currentProduct.price);
+      setProduct_name(currentProduct.product_name);
+      setCategory(currentProduct.category);
+      setDescription(currentProduct.description);
+    }
+  }, [currentProduct]);
 
   const handleSubmit = (e) => {
     e.preventDefault();

@@ -1,16 +1,15 @@
 .listing {
-    border: 1.5px steelblue solid;
-    padding: 3%;
-    border-radius: 15px;
-    background-color: lightblue;
-    color: darkblue;
-    margin-top: 3%;
+  border: 1.5px steelblue solid;
+  padding: 3%;
+  border-radius: 15px;
+  background-color: lightblue;
+  color: darkblue;
+  margin-top: 3%;
 }
 
 .listing-h2 {
-    width: fit-content;
-    border: 1.5px steelblue solid;
-    border-radius: 10px;
-    padding: 0.5%;
-    background-color: aliceblue;
+  width: fit-content;
+  border-radius: 10px;
+  padding: 1.5%;
+  background-color: aliceblue;
 }
